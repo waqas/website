@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Waqas Ashraf</title>
-  </head>
-  <body>
-    Waqas Ashraf
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqas Ashraf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #313647 0%, #413747 100%);
+      font-family: 'PT Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      /* letter-spacing: -0.0em; */
+      animation: fadeIn 0.5s ease-out;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0.5;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Waqas Ashraf</h1>
+</body>
 </html>
