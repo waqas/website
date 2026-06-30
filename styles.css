@@ -179,6 +179,7 @@ a:hover {
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
     var(--shadow-sm);
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .theme-toggle:hover {
   border-color: var(--accent);
@@ -323,6 +324,7 @@ a:hover {
   color: var(--subtle);
   padding: 0 8px;
   margin-bottom: 6px;
+  user-select: none;
 }
 .sidebar-nav a {
   display: flex;
@@ -338,6 +340,7 @@ a:hover {
     color 0.15s,
     padding 0.15s;
   text-decoration: none;
+  user-select: none;
 }
 .sidebar-nav a:hover {
   background: rgba(37, 99, 235, 0.08);
