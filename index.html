@@ -6,7 +6,7 @@
     <title>Waqas Ashraf — Software Engineer</title>
     <meta
       name="description"
-      content="Waqas Ashraf — software engineer building RockMaker, a scientific crystallography imaging platform. .NET / C#, React + TypeScript."
+      content="Waqas Ashraf — software engineer. .NET / C# backend, React + TypeScript frontend, focused on performance and database design."
     />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <script>
@@ -15,281 +15,214 @@
         try {
           t = localStorage.getItem("theme");
         } catch (e) {}
-        if (t !== "dark") t = "light";
+        if (t !== "light") t = "dark";
         document.documentElement.setAttribute("data-theme", t);
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="profile">
-          <div class="monogram" aria-hidden="true">WA</div>
-          <div class="profile-name">Waqas Ashraf</div>
-          <div class="profile-role">Software Engineer</div>
-        </div>
+    <div class="backdrop" aria-hidden="true"></div>
 
-        <nav class="nav" aria-label="Page navigation">
-          <a href="#about"><span class="nav-line"></span>About</a>
-          <a href="#skills"><span class="nav-line"></span>Skills</a>
-          <a href="#projects"><span class="nav-line"></span>Projects</a>
-          <a href="#experience"><span class="nav-line"></span>Experience</a>
-        </nav>
-
-        <div class="sidebar-footer">
-          <div class="social">
-            <a href="https://github.com/waqas" aria-label="GitHub" title="GitHub"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg
-            ></a>
-            <a href="https://linkedin.com/in/washraf" aria-label="LinkedIn" title="LinkedIn"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg
-            ></a>
-            <a href="mailto:hello@waqasashraf.com" aria-label="Email" title="Email"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg
-            ></a>
-          </div>
-          <button
-            class="theme-toggle"
-            type="button"
-            onclick="toggleTheme()"
-            aria-label="Toggle dark mode"
-            title="Toggle dark mode"
-          >
-            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a href="#" class="logo"><span class="logo-mark">WA</span><span>waqas<span class="dim">ashraf</span></span></a>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="#stack">Stack</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <button class="icon-btn" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-17.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
           </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero" id="about">
+        <span class="pill"><span class="pulse" aria-hidden="true"></span>available for collaboration</span>
+        <h1>Software engineer. <span class="soft">Building fast, reliable software, end to end.</span></h1>
+        <p class="hero-lede">
+          I work across a .NET / C# backend and a React + TypeScript frontend,
+          with a focus on performance and database design.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:hello@waqasashraf.com">Get in touch
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#projects">View projects</a>
         </div>
-      </aside>
+      </section>
 
-      <main class="main">
-        <section class="hero" id="about">
-          <p class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Available for collaboration
-          </p>
-          <h1 class="hero-title">
-            Software engineer building
-            <span class="hl">fast, dependable</span> applications for science
-            and business.
-          </h1>
-          <p class="hero-lede">
-            I work across a .NET / C# backend and a React + TypeScript
-            frontend, with a focus on performance, data access and database
-            design.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:hello@waqasashraf.com"
-              >Get in touch</a
-            >
-            <a class="btn btn-secondary" href="#projects">View projects</a>
+      <section class="section" id="stack">
+        <div class="section-head">
+          <div>
+            <div class="kicker">// stack</div>
+            <h2>Tools I reach for</h2>
           </div>
-        </section>
-
-        <section class="section" id="skills">
-          <h2 class="section-title">Skills &amp; Stack</h2>
-          <div class="skills">
-            <div class="skill">
-              <div class="skill-head">
-                <h3 class="skill-name">Backend</h3>
-                <div class="skill-meta">
-                  .NET / C# / EF Core
-                  <span class="level level-primary">Primary</span>
-                </div>
-              </div>
-              <ul class="chips">
-                <li>ASP.NET Core</li>
-                <li>C#</li>
-                <li>EF Core 8</li>
-                <li>SQL Server</li>
-                <li>SignalR</li>
-                <li>SkiaSharp</li>
-                <li>xUnit</li>
-              </ul>
-            </div>
-
-            <div class="skill">
-              <div class="skill-head">
-                <h3 class="skill-name">Frontend</h3>
-                <div class="skill-meta">
-                  React / TypeScript
-                  <span class="level level-primary">Primary</span>
-                </div>
-              </div>
-              <ul class="chips">
-                <li>React 18</li>
-                <li>TypeScript</li>
-                <li>Redux Toolkit</li>
-                <li>TailwindCSS</li>
-                <li>Konva.js</li>
-                <li>JavaScript</li>
-              </ul>
-            </div>
-
-            <div class="skill">
-              <div class="skill-head">
-                <h3 class="skill-name">DevOps &amp; Tooling</h3>
-                <div class="skill-meta">
-                  CI/CD, infrastructure
-                  <span class="level">Working</span>
-                </div>
-              </div>
-              <ul class="chips">
-                <li>Jenkins CI/CD</li>
-                <li>Docker</li>
-                <li>Git / Git Hooks</li>
-                <li>Grafana / Loki</li>
-                <li>Go</li>
-                <li>PostgreSQL</li>
-              </ul>
-            </div>
+        </div>
+        <div class="stack-grid">
+          <div class="card">
+            <div class="card-label">01 <span class="level primary">primary</span></div>
+            <h3>Backend</h3>
+            <p class="sub">.NET / C# / EF Core</p>
+            <ul class="tags">
+              <li class="on">ASP.NET Core</li><li class="on">C#</li><li class="on">EF Core 8</li><li>SQL Server</li><li>SignalR</li><li>SkiaSharp</li><li>xUnit</li>
+            </ul>
           </div>
-        </section>
+          <div class="card">
+            <div class="card-label">02 <span class="level primary">primary</span></div>
+            <h3>Frontend</h3>
+            <p class="sub">React / TypeScript</p>
+            <ul class="tags">
+              <li class="on">React 18</li><li class="on">TypeScript</li><li>Redux Toolkit</li><li>TailwindCSS</li><li>Konva.js</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-label">03 <span class="level">working</span></div>
+            <h3>DevOps &amp; Tooling</h3>
+            <p class="sub">CI/CD, infrastructure</p>
+            <ul class="tags">
+              <li>Jenkins CI/CD</li><li>Docker</li><li>Git / Git Hooks</li><li>Grafana / Loki</li><li>Go</li><li>PostgreSQL</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section class="section" id="projects">
-          <h2 class="section-title">Selected Projects</h2>
-          <div class="project-grid">
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8.5 5v10L12 22l-8.5-5V7L12 2z" /><path d="M12 22V12" /><path d="M12 12L3.5 7" /><path d="M12 12l8.5-5" /></svg>
-              </div>
-              <h3 class="card-title">RockMaker</h3>
-              <p class="card-desc">
+      <section class="section" id="projects">
+        <div class="section-head">
+          <div>
+            <div class="kicker">// projects</div>
+            <h2>Selected work</h2>
+          </div>
+        </div>
+        <div class="project-grid">
+          <article class="card feature">
+            <div class="feature-copy">
+              <div class="card-label">flagship · biotech research</div>
+              <h3>RockMaker</h3>
+              <p>
                 Scientific crystallography experiment design and imaging
                 platform — scoring pipeline, image generation, Konva.js
                 rendering.
               </p>
-              <ul class="card-tags">
-                <li>.NET</li>
-                <li>EF Core</li>
-                <li>React</li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" ry="1" /><path d="M9 14l2 2 4-4" /></svg>
+              <ul class="tags"><li>.NET</li><li>EF Core</li><li>React</li><li>Konva.js</li></ul>
+            </div>
+            <div class="plate" aria-hidden="true">
+              <svg id="plate" viewBox="0 0 252 172"></svg>
+              <div class="plate-legend">
+                <span>96-well plate · scored</span>
+                <span><i style="background: var(--accent)"></i>hit <i style="background: color-mix(in srgb, var(--accent) 45%, var(--well-empty))"></i>partial</span>
               </div>
-              <h3 class="card-title">Enterprise Audit System</h3>
-              <p class="card-desc">
-                End-to-end internal audit lifecycle platform covering document
-                control, scheduling, quality assurance, and automated reporting.
-              </p>
-              <ul class="card-tags">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>TailwindCSS</li>
-              </ul>
-            </article>
+            </div>
+          </article>
+          <article class="card half">
+            <div class="card-label">internal platform</div>
+            <h3>Enterprise Audit System</h3>
+            <p>
+              End-to-end internal audit lifecycle platform covering document
+              control, scheduling, quality assurance, and automated reporting.
+            </p>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>TailwindCSS</li></ul>
+          </article>
+          <article class="card half">
+            <div class="card-label">multi-tenant saas</div>
+            <h3>CRM + Support Desk</h3>
+            <p>
+              Multi-tenant CRM with Go/PostgreSQL backend, vertical slice
+              architecture, RLS, SLA policies, ticket workflows.
+            </p>
+            <ul class="tags"><li>Go</li><li>PostgreSQL</li></ul>
+          </article>
+          <article class="card" style="grid-column: span 6">
+            <div class="card-label">issue tracking</div>
+            <h3>IssueTrak</h3>
+            <p>
+              Lifecycle issue tracking with versioned releases, milestone
+              planning, and advanced query builder.
+            </p>
+            <ul class="tags"><li>Go</li><li>React</li></ul>
+          </article>
+        </div>
+      </section>
 
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><path d="M12 4v16" /><path d="M8 10h2" /><path d="M8 14h2" /><path d="M14 10h2" /><path d="M14 14h2" /></svg>
-              </div>
-              <h3 class="card-title">CRM + Support Desk</h3>
-              <p class="card-desc">
-                Multi-tenant CRM with Go/PostgreSQL backend, vertical slice
-                architecture, RLS, SLA policies, ticket workflows.
-              </p>
-              <ul class="card-tags">
-                <li>Go</li>
-                <li>PostgreSQL</li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" /><path d="M12 2v4" /><path d="M12 18v4" /><path d="M2 12h4" /><path d="M18 12h4" /></svg>
-              </div>
-              <h3 class="card-title">IssueTrak</h3>
-              <p class="card-desc">
-                Lifecycle issue tracking with versioned releases, milestone
-                planning, and advanced query builder.
-              </p>
-              <ul class="card-tags">
-                <li>Go</li>
-                <li>React</li>
-              </ul>
-            </article>
+      <section class="section" id="experience">
+        <div class="section-head">
+          <div>
+            <div class="kicker">// experience</div>
+            <h2>Where I've been</h2>
           </div>
-        </section>
-
-        <section class="section" id="experience">
-          <h2 class="section-title">Experience</h2>
-          <article class="role">
-            <header class="role-head">
+        </div>
+        <div class="card exp">
+          <div class="exp-side">
+            <div class="when">Jul 2022 → present</div>
+            <h3>Senior Software Engineer</h3>
+            <p>Flagship biotech research platform (RockMaker). Full-stack ownership across backend, frontend, and data layer.</p>
+          </div>
+          <div class="exp-list">
+            <div class="exp-item">
+              <span class="tag">performance</span>
               <div>
-                <h3 class="role-title">Senior Software Engineer</h3>
-                <p class="role-org">
-                  Flagship biotech research platform (RockMaker)
+                <h4>High-throughput image processing &amp; API performance</h4>
+                <p>
+                  Streamlined the image processing pipeline to reduce
+                  per-request compute overhead and improve throughput under
+                  concurrent load. Optimised data access patterns to cut
+                  redundant database round-trips and boost overall query
+                  efficiency.
                 </p>
               </div>
-              <span class="role-dates">Jul 2022 – Present</span>
-            </header>
-            <p class="role-summary">
-              Full-stack ownership across backend, frontend, and data layer.
-            </p>
+            </div>
+            <div class="exp-item">
+              <span class="tag">architecture</span>
+              <div>
+                <h4>Feature design &amp; database architecture</h4>
+                <p>
+                  Led design and implementation of new product features
+                  including schema design, backend APIs, and React UI. Mentored
+                  junior developers in best practices and business logic.
+                </p>
+              </div>
+            </div>
+            <div class="exp-item">
+              <span class="tag">devops</span>
+              <div>
+                <h4>CI/CD, code quality &amp; deployment</h4>
+                <p>
+                  Streamlined Jenkins pipelines for build, code signing, and
+                  deployment. Enforced code linting and formatting via Git
+                  hooks. Supported field teams in debugging and issue
+                  resolution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <ul class="highlights">
-              <li class="highlight">
-                <span class="highlight-label">Performance</span>
-                <div>
-                  <h4 class="highlight-title">
-                    High-throughput image processing &amp; API performance
-                  </h4>
-                  <p>
-                    Streamlined the image processing pipeline to reduce
-                    per-request compute overhead and improve throughput under
-                    concurrent load. Optimised data access patterns to cut
-                    redundant database round-trips and boost overall query
-                    efficiency.
-                  </p>
-                </div>
-              </li>
-              <li class="highlight">
-                <span class="highlight-label">Architecture</span>
-                <div>
-                  <h4 class="highlight-title">
-                    Feature design &amp; database architecture
-                  </h4>
-                  <p>
-                    Led design and implementation of new product features
-                    including schema design, backend APIs, and React UI.
-                    Mentored junior developers in best practices and business
-                    logic.
-                  </p>
-                </div>
-              </li>
-              <li class="highlight">
-                <span class="highlight-label">DevOps</span>
-                <div>
-                  <h4 class="highlight-title">
-                    CI/CD, code quality &amp; deployment
-                  </h4>
-                  <p>
-                    Streamlined Jenkins pipelines for build, code signing, and
-                    deployment. Enforced code linting and formatting via Git
-                    hooks. Supported field teams in debugging and issue
-                    resolution.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </article>
-        </section>
+      <section class="cta">
+        <div>
+          <h2>Let's build something.</h2>
+          <p>hello@waqasashraf.com</p>
+        </div>
+        <div class="socials">
+          <a href="mailto:hello@waqasashraf.com" aria-label="Email" title="Email"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          <a href="https://github.com/waqas" aria-label="GitHub" title="GitHub"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+          <a href="https://linkedin.com/in/washraf" aria-label="LinkedIn" title="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </section>
 
-        <footer class="footer">
-          <span>© <span id="year">2026</span> Waqas Ashraf</span>
-          <a href="mailto:hello@waqasashraf.com">hello@waqasashraf.com</a>
-        </footer>
-      </main>
-    </div>
+      <footer class="footer">
+        <span>© <span id="year">2026</span> Waqas Ashraf</span>
+        <span>waqasashraf.com</span>
+      </footer>
+    </main>
 
     <script>
       function toggleTheme() {
@@ -300,29 +233,55 @@
           localStorage.setItem("theme", next);
         } catch (e) {}
       }
-
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Highlight the nav link for the section currently in view
-      const links = document.querySelectorAll(".nav a");
-      const sections = [...links].map((a) =>
-        document.querySelector(a.getAttribute("href"))
-      );
-      function updateActive() {
-        let current = sections[0];
-        for (const s of sections) {
-          if (s.getBoundingClientRect().top <= window.innerHeight * 0.35) current = s;
+      // Decorative 96-well plate: deterministic "scores" so it looks the same every load
+      (function () {
+        const svg = document.getElementById("plate");
+        const ns = "http://www.w3.org/2000/svg";
+        let seed = 7;
+        const rand = () => ((seed = (seed * 9301 + 49297) % 233280) / 233280);
+        const rows = "ABCDEFGH";
+        for (let c = 0; c < 12; c++) {
+          const t = document.createElementNS(ns, "text");
+          t.setAttribute("x", 24 + c * 19.5);
+          t.setAttribute("y", 8);
+          t.setAttribute("text-anchor", "middle");
+          t.setAttribute("font-size", "6");
+          t.setAttribute("font-family", "Geist Mono, monospace");
+          t.style.fill = "var(--muted)";
+          t.textContent = c + 1;
+          svg.appendChild(t);
         }
-        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
-          current = sections[sections.length - 1];
+        for (let r = 0; r < 8; r++) {
+          const t = document.createElementNS(ns, "text");
+          t.setAttribute("x", 4);
+          t.setAttribute("y", 24 + r * 19.5 + 2);
+          t.setAttribute("font-size", "6");
+          t.setAttribute("font-family", "Geist Mono, monospace");
+          t.style.fill = "var(--muted)";
+          t.textContent = rows[r];
+          svg.appendChild(t);
+          for (let c = 0; c < 12; c++) {
+            const v = rand();
+            const well = document.createElementNS(ns, "circle");
+            well.setAttribute("cx", 24 + c * 19.5);
+            well.setAttribute("cy", 24 + r * 19.5);
+            well.setAttribute("r", 7.2);
+            well.style.setProperty(
+              "fill",
+              v > 0.88
+                ? "var(--accent)"
+                : v > 0.7
+                  ? "color-mix(in srgb, var(--accent) 45%, var(--well-empty))"
+                  : "var(--well-empty)"
+            );
+            well.style.stroke = "var(--border-strong)";
+            well.setAttribute("stroke-width", "0.6");
+            svg.appendChild(well);
+          }
         }
-        links.forEach((a) =>
-          a.classList.toggle("active", a.getAttribute("href") === "#" + current.id)
-        );
-      }
-      window.addEventListener("scroll", updateActive, { passive: true });
-      window.addEventListener("resize", updateActive);
-      updateActive();
+      })();
     </script>
   </body>
 </html>
